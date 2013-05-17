@@ -1,0 +1,55 @@
+<%= stylesheet_link_tag 'demo.css' %>
+
+<table width='100%' height='90%'><tr style='text-align: center'><td>
+	<div id='content'>
+		<%= image_tag 'logo.png', :id => 'logo' %>
+		<br><br>
+		<table width='100%' border=0>
+			<tr>
+				<td width='50%'>
+					<h id='title'>
+						EXCLUSIVE SALES FROM THE WORLD'S BEST BOUTIQUES.
+					</h>
+					<p>Get insider access to hand-selected styles that match your style, size, and taste, from the best boutiques from all over the world. Invites are limited, sign up to be one of the first to receive a free invite.</p>
+				</td>
+				<td width='50%' style='padding-left: 30px'>
+					<div id='return_message'>
+						Simply enter your email address and click on
+						<div id="return_message_arrow"></div>
+					</div>
+					<h id='label_email'>EMAIL: *</h>
+					<p id='return'>Returning user?</p>
+					<br>
+					<%= form_for @user_info, :url => {:controller => 'demo', :action => 'submit'} do |f| -%>
+						<%= f.email_field :email %>
+						<input id='signup_button' type='submit' value='GET AN INVITE'/>
+					<% end -%>					
+					<br><br><br>					
+					<span class="privacy_policy">
+						By submitting this email, I understand the <a id="modal-privacy" onclick="$('#privacy_dialog').dialog('open')">privacy policy</a>
+					</span>					
+				</td>
+			</tr>
+		</table>
+		<br><br>
+		<ul id="inner-footer">
+			<li class="inner-footer_icon facebook"><a href="http://facebook.com/shopulse" target="_blank">Facebook Page</a></li>
+			<li class="inner-footer_icon twitter"><a href="http://twitter.com/itsshopulse" target="_blank">Follow Me</a></li>
+			<div class="clear"></div>
+		</ul>
+		<div id="privacy_dialog">
+			<a class="close" onclick="$('#privacy_dialog').dialog('close')">×</a>
+			<h2>Privacy Policy</h2>
+			<p>Your email will never be shared with a third party.  We'll only use it to notify you of our launch, news, and sales.  You'll have the opportunity to unsubscribe at any time, immediately, once you receive your first email.</p>
+		</div>
+	</div>
+</td></tr></table>
+
+
+<div class='wallpaper' id='1'>
+	<%= image_tag 'demo/bg1.jpeg' %>
+</div>
+<div class='wallpaper' id='2'>
+	<%= image_tag 'demo/bg2.jpeg'%>
+</div>
+
