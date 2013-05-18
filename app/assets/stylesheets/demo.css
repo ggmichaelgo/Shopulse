@@ -3,6 +3,7 @@ html, body
 	width: 100%;
 	height: 100%;
 	margin: 0px;
+	overflow-y: hidden;
 }
 
 h2
@@ -120,8 +121,8 @@ h2
 	font-family: Arial;	
 	position: absolute;
 	right: 15px;
-	top: 140px;
-	width: 90px;
+	top: 110px;
+	width: 120px;
 	padding: 12px;
 	opacity: 1;
 	background: black;
@@ -140,8 +141,8 @@ h2
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	border-top: 10px solid black;
-	top: 62px;
-	left: 45px;
+	top: 89px;
+	left: 63px;
 }
 #signup_button
 {
