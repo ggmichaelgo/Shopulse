@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130517211444) do
 
-  create_table "demo_infos", :force => true do |t|
+  create_table "launch_infos", :force => true do |t|
     t.integer  "viewers_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(:version => 20130517211444) do
 
   create_table "user_infos", :force => true do |t|
     t.string   "email"
-    t.integer  "demo_info_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "launch_info_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

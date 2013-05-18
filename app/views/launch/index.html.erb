@@ -20,7 +20,7 @@
 					<h id='label_email'>EMAIL: *</h>
 					<p id='return'>Returning user?</p>
 					<br>
-					<%= form_for @user_info, :url => {:controller => 'demo', :action => 'submit'} do |f| -%>
+					<%= form_for @user_info, :url => {:controller => 'launch', :action => 'submit'} do |f| -%>
 						<%= f.email_field :email %>
 						<input id='signup_button' type='submit' value='GET AN INVITE'/>
 					<% end -%>					
@@ -47,8 +47,8 @@
 
 
 <div class='wallpaper' id='1'>
-	<%= image_tag 'demo/bg1.jpeg' %>
+	<%= image_tag 'launch/bg1.jpeg' %>
 </div>
 <div class='wallpaper' id='2'>
-	<%= image_tag 'demo/bg2.jpeg'%>
+	<%= image_tag 'launch/bg2.jpeg'%>
 </div>
