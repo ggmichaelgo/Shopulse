@@ -1,1 +1,10 @@
-mypage.html.erb
+<%
+	@launch_info = @user_info.launch_info
+%>
+
+<h2>Hello <%= @user_info.email %></h2>
+<p>CLICKS: <%= @launch_info.ref_clicks %></p>
+<p>SIGN_UPS: <%= @launch_info.subscriber.count %></p>
+<p>REF: http://localhost:3000/invite/<%= @launch_info.ref %></p>
+
+<%= link_to "sign_out", :action => "sign_out" %>

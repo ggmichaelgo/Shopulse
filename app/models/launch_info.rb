@@ -1,3 +1,5 @@
 class LaunchInfo < ActiveRecord::Base
-	has_many :viewers
+	attr_accessible :ref, :ref_clicks
+	serialize :subscriber
+	belongs_to :user_info
 end

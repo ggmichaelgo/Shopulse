@@ -14,16 +14,19 @@
 ActiveRecord::Schema.define(:version => 20130517211444) do
 
   create_table "launch_infos", :force => true do |t|
-    t.integer  "viewers_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_info_id"
+    t.integer  "ref_clicks"
+    t.string   "subscriber"
+    t.string   "ref"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "user_infos", :force => true do |t|
+    t.integer  "user_id"
     t.string   "email"
-    t.integer  "launch_info_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
