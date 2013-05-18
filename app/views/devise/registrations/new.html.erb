@@ -1,6 +1,8 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+
+<%= form_for resource, :as => resource_name, :url => {:controller => 'registrations', :action => 'create', :id => params[:id]}, :action => 'create' do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
@@ -14,5 +16,4 @@
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
-
 <%= render "devise/shared/links" %>

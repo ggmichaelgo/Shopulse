@@ -108,7 +108,8 @@ h2
 
 #return
 {
-	display: inline-block;
+	/*display: inline-block;*/
+	margin: 7px;
 	float: right;
 	color: red;
 	font-size: 11px;
@@ -158,7 +159,7 @@ h2
 	font-weight: bold;
 	text-transform: uppercase;	
 	background-color: #e00202;
-	cursor: pointer;
+	cursor: pointer;	
 }
 
 .privacy_policy
