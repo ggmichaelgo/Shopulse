@@ -71,10 +71,10 @@ $(document).ready(function(){
 					</td>					
 					<td>
 						<%= form_for :email, :method => 'POST' do |f| %>							
-						<%= f.text_field :recipients, :placeholder => 'enter emails (comma seperated)', :onclick => 'show_email_pane();' %>
+						<%= f.text_field :recipients, :placeholder => 'enter emails (comma seperated)', :onclick => 'show_email_pane();' , :required => true%>
 						<div id='email_pane'>
-							<%= f.text_field :subject, :placeholder => 'email subject' %>
-							<%= f.text_area :message, :placeholder => 'email message' %>
+							<%= f.text_field :subject, :placeholder => 'email subject', :required => true %>
+							<%= f.text_area :message, :placeholder => 'email message', :required => true %>
 							<%= f.submit "" %>
 						</div>
 						<p style='text-align: center; margin: 0'>or import contact</p>
