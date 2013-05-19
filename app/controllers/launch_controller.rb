@@ -19,6 +19,9 @@ class LaunchController < ApplicationController
 			foo.create_launch_info
 			foo.launch_info.ref = generate_reference
 			foo.launch_info.save
+			
+			UserMailer.welcome_email(foo).deliver
+			MailChimp.add_subcriber foo.email
 
 			ref = session[:ref]
 			if ref != nil
@@ -58,8 +61,27 @@ class LaunchController < ApplicationController
 		end
 	end
 
+	def send_email
+		from = UserInfo.find(session[:user_info_id])
+		list = get_recipients params[:email][:recipients]
+		subject = params[:email][:subject]
+		message = params[:email][:message]
+		UserMailer.launch_invitation_email(from, list, subject, message).deliver
+		render :json => 72
+		# redirect_to :action => "invite"
+	end
+
 	def generate_reference(size = 5)
 		charset = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 		(0...size).map{ charset[rand(charset.size)] }.join
+	end
+
+	def get_recipients line
+		list = []
+		line.split(",").each do |x|
+			x = x.split('<')[1].delete('>') if x["<"] != nil
+			list.push x
+		end
+		return list.join(",")
 	end
 end

@@ -90,7 +90,7 @@ h2
 	display: inline-block;
 	float: left;
 	overflow: hidden;
-	width: 178px;
+	width: 168px	;
 	background: #F7F7F7;
 	border: 1px solid #DDD;
 	font-family: 'Lucida Grande', sans-serif;
@@ -148,17 +148,13 @@ h2
 #signup_button
 {
 	display: inline-block;
-	width: auto;
+	width: 115px;
 	height: 35px;
+	background-image: url('button.png');
+	background-color: transparent;
 	padding: 0px 10px;
 	float: right;
 	border: none;
-	color: #fff;
-	font-family: Helvetica, Arial, sans-serif !important;
-	font-size: 11px;
-	font-weight: bold;
-	text-transform: uppercase;	
-	background-color: #e00202;
 	cursor: pointer;	
 }
 

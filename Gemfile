@@ -15,3 +15,5 @@ gem 'jquery-ui-rails'
 
 gem 'devise'
 gem "cancan"
+
+gem 'gibbon' #Mail Chimp

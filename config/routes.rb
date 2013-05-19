@@ -8,7 +8,10 @@ Shopulse::Application.routes.draw do
 		root :to => 'registrations#select'
 	end
 	match 'invite/:id' => 'launch#invite'
+	match 'launch/mypage' => 'launch#send_email', :via => :post
+
 	match 'register' => 'registrations#select'
+
 	# match 'register' => 'launch#index'
 	match ':controller(/:action(/:id))(.:format)'	
 end

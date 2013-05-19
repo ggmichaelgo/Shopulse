@@ -12,6 +12,7 @@ $(document).ready(function(){
 	$('.bar b').hide();
 	cnt = <%= @launch_info.subscriber.count %>;	
 	setTimeout(function() { set_bar(cnt); }, 1000);	
+	// show_email_pane();
 });
 </script>
 
@@ -27,9 +28,10 @@ $(document).ready(function(){
 
 <table width='100%' height='90%'><tr style='text-align: center'><td>
 	<div id='content'>
+		<a class="close" href='sign_out'>×</a><br>
 		<%= image_tag 'logo.png', :id => 'logo' %>
 		<br><br>
-		<h2 style='font-size: 28px'>HELLO!</h2>
+		<h2 style='font-size: 28px'>Hello <%= @user_info.email %>!</h2>
 		<div id='info'>
 			<table width='681px' border=0>
 				<tr>
@@ -38,7 +40,6 @@ $(document).ready(function(){
 					<td>Invite 5 friend</td>
 					<td>Invite 10+ friend</td>
 				</tr>
-				<!-- <tr><td height='5px'></td><td></td><td></td><td></td></tr> -->
 				<tr height='40px'> 
 					<td class='bar_container' colspan=4>
 						<div class='bar'>
@@ -57,7 +58,7 @@ $(document).ready(function(){
 				</tr>
 			</table>
 		</div>
-		<br>
+		<br><br>
 		<div id='sns_group'>
 			<table width='680px'>
 				<tr>
@@ -66,16 +67,46 @@ $(document).ready(function(){
 					<td>Send link directly</td>
 				</tr>
 				<tr>
-					<td width='180px'>
-						<div style='padding: 0 1px 0 15px;'class="fb-send" data-href="http://shopulse.com/invite" data-font="arial"></div>
-						<a href="https://twitter.com/share" class="twitter-share-button" data-via="itsshopulse">Tweet</a>
+					<td>
+						<div style='padding: 0 -1px 0 15px;'class="fb-send" data-href="http://shopulse.com/invite/<%= @launch_info.ref %>" data-font="arial"></div>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.shopulse.com/invite/<%= @launch_info.ref %>" data-via="itsshopulse" data-count="none">Tweet</a>
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+					</td>
+					<td>
+						<%= form_for :email, :method => 'POST' do |f| %>							
+						<%= f.text_field :recipients, :placeholder => 'enter emails (comma seperated)', :onclick => 'show_email_pane();' %>
+						<div id='email_pane'>
+							<%= f.text_field :subject, :placeholder => 'email subject' %>
+							<%= f.text_area :message, :placeholder => 'email message' %>
+							<%= f.submit "" %>
+						</div>
+						<p style='text-align: center; margin: 0'>or import contact</p>
+						<!-- Any link with a class="cs_import" will start the import process -->
+						<div class="social-buttons" style="">
+							<span onclick='show_email_pane()'>
+								<a id="source-yahoo" href="#" onclick="return cloudsponge.launch('yahoo');"><img height="28" src="<%= asset_path('yahoo.png') %>" width="28"></a>
+								<a id="source-gmail" href="#" onclick="return cloudsponge.launch('gmail');"><img height="28" src="<%= asset_path('google.png') %>" width="28"></a>								
+								<a id="source-addressbook" href="#" onclick="return cloudsponge.launch('addressbook');" style="display: inline;"><img height="28" src="<%= asset_path('apple.png') %>" width="28"></a>
+							</span>
+						</div>
+						<!-- Include these scripts at the bottom of your page to import address books with CloudSponge -->
+						<script type="text/javascript" src="https://api.cloudsponge.com/address_books.js"></script>
+						<script type="text/javascript" charset="utf-8">
+						var csPageOptions = {
+							domain_key:"GFTTFYJC8KDPNAVF8D2Y", 
+							textarea_id:"email_recipients"
+						};
+						</script>
+						<script src="https://api.cloudsponge.com/address_books.js"></script>
+						<% end %>
+					</td>
+					<td>
+						<input type='text' id='ref_link' value="http://www.shopulse.com/invite/<%= @launch_info.ref %>" onclick="this.select()" />
 					</td>
 				</tr>
 			</table>
 		</div>
 
-		<p>http://localhost:3000/invite/<%= @launch_info.ref %></p>
 		<ul id="inner-footer">
 			<li class="inner-footer_icon facebook"><a href="http://facebook.com/shopulse" target="_blank">Facebook Page</a></li>
 			<li class="inner-footer_icon twitter"><a href="http://twitter.com/itsshopulse" target="_blank">Follow Me</a></li>
@@ -83,17 +114,3 @@ $(document).ready(function(){
 		</ul>			
 	</div>
 </td></tr></table>
-
-
-		<!-- <div id='sns'>
-		<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-			<div href='<%= "http://#{request.domain}/invite/#{@launch_info.ref}" %>' class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-		</div> -->

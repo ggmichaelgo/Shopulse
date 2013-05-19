@@ -35,8 +35,12 @@ module Shopulse
     config.assets.version = '1.0'
 
     #fonts
-    #config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    #lib
+    config.cache_classes = true   
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]  
   end
 end

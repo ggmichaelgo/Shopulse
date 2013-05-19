@@ -15,3 +15,11 @@ function set_bar(size)
 		$('.bar b').fadeIn();
 	});
 }
+
+function show_email_pane()
+{
+	$('#email_pane').slideDown();
+	$('#content').animate({
+		'height': '680px'
+	});
+}

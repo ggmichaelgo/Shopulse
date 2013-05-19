@@ -1,6 +1,17 @@
 body
 {
 	background-color: grey;
+	overflow-y: scroll;
+}
+
+#logo
+{
+	margin-top: 31px;
+}
+
+#content
+{
+	height: 500px;
 }
 
 #info table
@@ -55,7 +66,8 @@ body
 	color: white;
 	font-size: 13px;
 	display: block;	
-	line-height: 131%;		
+	line-height: 131%;	
+	font-weight: normal;	
 }
 .bar_container
 {
@@ -72,4 +84,43 @@ body
 	text-align: center;
 	font-family: "HelveticaNeue-Light";
 	font-size: 18px;
+	width: 200px;
+}
+
+#email_recipients
+{
+	width: 177px;
+}
+
+#email_pane
+{
+	display: none;
+}
+
+#email_pane textarea
+{
+	height: 100px;
+	width: 177px;
+	margin-top: 3px;
+}
+
+#email_pane input[type='text']
+{
+	display: block;
+	margin: 0 auto;
+	width: 177px;
+}
+
+#email_pane input[type='submit']
+{
+	display: block;
+	width: 197px;
+	height: 36px;
+	background-image: url('invitation_button.png');
+	margin: 3px auto;
+}
+
+#ref_link
+{
+	width: 150px;
 }
