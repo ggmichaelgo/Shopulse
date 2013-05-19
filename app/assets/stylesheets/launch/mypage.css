@@ -29,7 +29,7 @@ body
 	border-right: 1px solid #000;
 	width: 25%;
 	padding: 0px;
-	font-family: "HelveticaNeue-Light";
+	font-family: "HelveticaNeue-Light", Helvetica;
 	vertical-align: middle;
 	font-size: 14px;
 }
@@ -82,7 +82,7 @@ body
 #sns_group td
 {
 	text-align: center;
-	font-family: "HelveticaNeue-Light";
+	font-family: "HelveticaNeue-Light", Helvetica;
 	font-size: 18px;
 	width: 200px;
 }

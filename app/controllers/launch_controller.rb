@@ -12,8 +12,7 @@ class LaunchController < ApplicationController
 	end
 
 	def submit
-		user_info  = UserInfo.new(params[:user_info])
-		foo = UserInfo.where('email = "%{@user_info.email}"').first
+		foo = UserInfo.where("email = '#{params[:user_info][:email]}'").first
 		if foo == nil
 			foo = UserInfo.create(params[:user_info])
 			foo.create_launch_info
@@ -24,8 +23,8 @@ class LaunchController < ApplicationController
 			MailChimp.add_subcriber foo.email
 
 			ref = session[:ref]
-			if ref != nil
-				launch_info = LaunchInfo.where("ref = '#{ref}'").first
+			launch_info = LaunchInfo.where("ref = '#{ref}'").first
+			if launch_info != nil
 				launch_info.subscriber.push foo.id
 				launch_info.save
 			end
@@ -67,8 +66,8 @@ class LaunchController < ApplicationController
 		subject = params[:email][:subject]
 		message = params[:email][:message]
 		UserMailer.launch_invitation_email(from, list, subject, message).deliver
-		render :json => 72
-		# redirect_to :action => "invite"
+		# render :json => 72
+		redirect_to :action => "invite"
 	end
 
 	def generate_reference(size = 5)

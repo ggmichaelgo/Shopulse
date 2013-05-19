@@ -1,7 +1,5 @@
 <%
 @launch_info = @user_info.launch_info
-@launch_info.subscriber = [1,2,3,4,5]
-
 %>
 
 <%= stylesheet_link_tag 'launch/launch.css' %>
@@ -12,7 +10,6 @@ $(document).ready(function(){
 	$('.bar b').hide();
 	cnt = <%= @launch_info.subscriber.count %>;	
 	setTimeout(function() { set_bar(cnt); }, 1000);	
-	// show_email_pane();
 });
 </script>
 
@@ -114,3 +111,10 @@ $(document).ready(function(){
 		</ul>			
 	</div>
 </td></tr></table>
+
+<div class='wallpaper' id='1'>
+	<%= image_tag 'launch/bg1.jpeg' %>
+</div>
+<div class='wallpaper' id='2'>
+	<%= image_tag 'launch/bg2.jpeg'%>
+</div>
