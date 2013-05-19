@@ -1,15 +1,11 @@
 development:
-  :address: smtp.gmail.com
+  :address: smtp.mandrillapp.com
   :port: 587
-  :authentication: plain
-  :user_name: ggmichaelgogame@gmail.com
-  :password: goodfortune!
-  :enable_starttls_auto: true
+  :user_name: shopulse
+  :password: sHx9Uy5gRIrL2Qnd6ygjGg
   
 production:
-  :address: smtp.gmail.com
+  :address: smtp.mandrillapp.com
   :port: 587
-  :authentication: plain
-  :user_name: ggmichaelgogame@gmail.com
-  :password: goodfortune!
-  :enable_starttls_auto: true
+  :user_name: shopulse
+  :password: sHx9Uy5gRIrL2Qnd6ygjGg
