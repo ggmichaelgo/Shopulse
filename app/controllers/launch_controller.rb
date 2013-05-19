@@ -65,9 +65,9 @@ class LaunchController < ApplicationController
 		list = get_recipients params[:email][:recipients]
 		subject = params[:email][:subject]
 		message = params[:email][:message]
-		UserMailer.launch_invitation_email(from, list, subject, message).deliver
-		# render :json => 72
-		redirect_to :action => "invite"
+		foo = UserMailer.launch_invitation_email(from, list, subject, message)
+		render :json => 72
+		# redirect_to :action => "invite"
 	end
 
 	def generate_reference(size = 5)

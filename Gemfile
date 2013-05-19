@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
+gem 'json', '1.7.4'
 gem 'mysql2'
 
 group :assets do
@@ -17,3 +17,4 @@ gem 'devise'
 gem "cancan"
 
 gem 'gibbon' #Mail Chimp
+gem "mandrill-api"
