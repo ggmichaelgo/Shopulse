@@ -1,7 +1,7 @@
 Shopulse::Application.routes.draw do
 	resources :roles
 
-	# root :to => 'launch#index'
+	root :to => 'launch#index'
 
 	devise_for :users, :controllers => {:registrations => 'registrations'}  do
 		get "register", :to => "registrations#select"
