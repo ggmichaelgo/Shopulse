@@ -42,7 +42,7 @@ $(document).ready(function(){
 						<div class='bar'>
 							<div style='float:right;padding: 3px 6px 0;'>
 								<b id='bar_count'></b>
-								<b>friends invited</b>
+								<b>friend<%= 's' if @launch_info.subscriber.count > 1%> invited</b>
 							</div>
 						</div>
 					</td>

@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-	default from: "shopulse@Shopulse.com"
+	default from: "hello@Shopulse.com"
 
 	def launch_invitation_email user, recipients, subject, message
 		@ref = user.launch_info.ref
