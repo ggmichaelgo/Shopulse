@@ -156,7 +156,8 @@ h2
 	padding: 0px 10px;
 	float: right;
 	border: none;
-	cursor: pointer;	
+	cursor: pointer;
+	margin-top: -3px;
 }
 
 .privacy_policy
