@@ -46,6 +46,7 @@ h2
 	background-color: rgba(255, 255, 255, 0.8);
 	padding: 40px;	
 	z-index: 2;	
+	overflow-y: hidden;
 }
 
 #content p
