@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
 		@message = message
 		@user = user
 
-		mail(:to => recipients, :subject => "Shopulse: "+subject)
+		mail(:to => recipients, :subject => subject)
 	end
 
 	def welcome_email user
