@@ -12,6 +12,7 @@ body
 #content
 {
 	height: 500px;
+	top: -40px;
 }
 
 #info table

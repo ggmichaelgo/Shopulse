@@ -20,7 +20,7 @@ function show_email_pane()
 {
 	$('#email_pane').slideDown();
 	$('#content').animate({
-		'height': '680px'
+		'height': '706px'
 	});
 }
 
@@ -40,18 +40,17 @@ function email_error()
 }
 
 $(document).ready(function(){
+	
 	$('#email_form').bind("ajax:success", function(xhr, data, status) {
 		hide_email_pane();
-	}).bind("ajax:error", function(xhr, data, status){
-		email_error();
-	});
+    });
 
 	$('#invitation_dialog').dialog({
 		modal: true,
 		title: false,
 		width: 280,
-		height: 80,
-		show: 'fade',
+		height: 105,
+		show: 'fade'
 	});
 	$('#invitation_dialog').dialog('close');
 	$(".ui-dialog-titlebar").hide();

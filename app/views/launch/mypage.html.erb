@@ -5,6 +5,7 @@
 <%= stylesheet_link_tag 'launch/launch.css' %>
 <%= stylesheet_link_tag 'launch/mypage.css' %>
 <%= javascript_include_tag 'launch/mypage.js' %>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	$('.bar b').hide();
@@ -22,7 +23,7 @@ $(document).ready(function(){
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<table width='100%' height='90%'><tr style='text-align: center'><td>
+<table width='100%' height='100%'><tr style='text-align: center'><td>
 	<div id='content'>
 		<a class="close" href='sign_out'>×</a><br>
 		<%= image_tag 'logo.png', :id => 'logo' %>
@@ -69,9 +70,10 @@ $(document).ready(function(){
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 					</td>					
 					<td>
-
-						<%= form_for :email, :method => 'POST', :remote => true, :html=>{:id => 'email_form'} do |f| %>							
-						<%= f.email_field :recipients, :placeholder => 'enter emails (comma seperated)', :onclick => 'show_email_pane();' , :required => true%>
+						<%= form_for :email, :method => 'POST', :remote => true,
+						 :html=>{:id => 'email_form', :onsubmit => 'hide_email_pane()'} do |f| %>							
+						<%= f.email_field :recipients, :placeholder => 'enter emails (comma seperated)', 
+						:onclick => 'show_email_pane();' , :required => true%>
 						<div id='email_pane'>
 							<%= f.text_field :subject, :placeholder => 'email subject', :required => true %>
 							<%= f.text_area :message, :placeholder => 'email message', :required => true %>

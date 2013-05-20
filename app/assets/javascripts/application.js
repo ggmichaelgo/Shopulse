@@ -11,9 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-// require jquery_ujs
+//= require jquery_ujs
 // require_tree .
 // require jquery.ui.all
 //= require jquery.ui.dialog
 // require jquery.ui.effect
-// require jquery.ui.effect-shake
