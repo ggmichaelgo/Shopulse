@@ -22,7 +22,7 @@
 					<p id='return'>Returning user?</p>
 					<br>
 					<%= form_for @user_info, :url => {:controller => 'launch', :action => 'submit'} do |f| -%>
-						<%= f.email_field :email %>
+						<%= f.email_field :email, :required => true %>
 						<input id='signup_button' type='submit' value=''/>
 					<% end -%>
 					<br><br><br>					

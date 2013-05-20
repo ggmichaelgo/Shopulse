@@ -9,7 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
- *= require jquery.ui.dialog
+ * require_tree .
+ * require jquery.ui.dialog
+ * require jquery.ui.core
+ * require jquery.ui.theme
+ *= require jquery.ui.all
  */
 

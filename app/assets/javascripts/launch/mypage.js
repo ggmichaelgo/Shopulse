@@ -23,3 +23,36 @@ function show_email_pane()
 		'height': '680px'
 	});
 }
+
+function hide_email_pane()
+{
+	$('#email_pane').slideUp();
+	$('#content').animate({
+		'height': '500px'
+	}, function(){
+		$('#invitation_dialog').dialog();
+	});	
+}
+
+function email_error()
+{
+	
+}
+
+$(document).ready(function(){
+	$('#email_form').bind("ajax:success", function(xhr, data, status) {
+		hide_email_pane();
+	}).bind("ajax:error", function(xhr, data, status){
+		email_error();
+	});
+
+	$('#invitation_dialog').dialog({
+		modal: true,
+		title: false,
+		width: 280,
+		height: 80,
+		show: 'fade',
+	});
+	$('#invitation_dialog').dialog('close');
+	$(".ui-dialog-titlebar").hide();
+});

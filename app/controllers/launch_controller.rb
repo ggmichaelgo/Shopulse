@@ -35,9 +35,7 @@ class LaunchController < ApplicationController
 
 	def mypage
 		@user_info = UserInfo.find_by_id(session[:user_info_id])
-		if @user_info == nil
-			redirect_to :action => 'index'
-		end
+		redirect_to :action => 'index' if @user_info == nil
 	end
 
 	def invite
@@ -65,12 +63,8 @@ class LaunchController < ApplicationController
 		list = get_recipients params[:email][:recipients]
 		subject = params[:email][:subject]
 		message = params[:email][:message]
-		begin
-			result = UserMailer.launch_invitation_email(from, list, subject, message).deliver
-			redirect_to :action => "invite", :notice => "Invitations are sent!"
-		rescue Exception => e
-			redirect_to :action => "invite", :alert => "Oops... Something went wrong"
-		end
+		result = UserMailer.launch_invitation_email(from, list, subject, message).deliver
+		render :json => 1
 	end
 
 	def generate_reference(size = 5)
