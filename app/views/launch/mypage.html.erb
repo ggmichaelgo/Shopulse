@@ -73,7 +73,9 @@ $(document).ready(function(){
 						<%= form_for :email, :method => 'POST', :remote => true,
 						 :html=>{:id => 'email_form', :onsubmit => 'hide_email_pane()'} do |f| %>							
 						<%= f.email_field :recipients, :placeholder => 'enter emails (comma seperated)', 
-						:onclick => 'show_email_pane();' , :required => true%>
+						:onclick => 'show_email_pane();', 
+						:multiple => "multiple",
+						:required => true%>
 						<div id='email_pane'>
 							<%= f.text_field :subject, :placeholder => 'email subject', :required => true %>
 							<%= f.text_area :message, :placeholder => 'email message', :required => true %>
