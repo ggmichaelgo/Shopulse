@@ -65,6 +65,7 @@ class LaunchController < ApplicationController
 		subject = params[:email][:subject]
 		message = params[:email][:message]
 		list.each do |x|
+			puts x
 			UserMailer.launch_invitation_email(from, x, subject, message).deliver
 		end
 		render :json => 1
@@ -78,9 +79,9 @@ class LaunchController < ApplicationController
 	def get_recipients line
 		list = []
 		line.split(",").each do |x|
-			x = x.split('<')[1].delete('>') if x["<"] != nil
+			x = x.split('<')[1].delete('>') if x.index "<" != nil
 			list.push x
 		end
-		return list.join(",")
+		return list
 	end
 end
