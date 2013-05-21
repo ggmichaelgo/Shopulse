@@ -1,12 +1,12 @@
 class UserMailer < ActionMailer::Base
 	default from: "\"Shopulse\" <hello@Shopulse.com>"
 
-	def launch_invitation_email user, recipients, subject, message
+	def launch_invitation_email user, recipient, subject, message
 		@ref = user.launch_info.ref
 		@message = message
 		@user = user
 
-		mail(:to => recipients, :subject => subject)
+		mail(:to => recipient, :subject => subject)
 	end
 
 	def welcome_email user

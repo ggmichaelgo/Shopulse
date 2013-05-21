@@ -13,6 +13,7 @@ class LaunchController < ApplicationController
 
 	def submit
 		foo = UserInfo.where("email = '#{params[:user_info][:email]}'").first
+		
 		if foo == nil
 			foo = UserInfo.create(params[:user_info])
 			foo.create_launch_info
@@ -63,7 +64,9 @@ class LaunchController < ApplicationController
 		list = get_recipients params[:email][:recipients]
 		subject = params[:email][:subject]
 		message = params[:email][:message]
-		result = UserMailer.launch_invitation_email(from, list, subject, message).deliver
+		list.each do |x|
+			UserMailer.launch_invitation_email(from, x, subject, message).deliver
+		end
 		render :json => 1
 	end
 
