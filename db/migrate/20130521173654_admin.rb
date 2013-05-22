@@ -5,11 +5,11 @@ class Admin < ActiveRecord::Migration
 		SQL
 
 		execute <<-SQL
-			ALTER TABLE io_questions
+			ALTER TABLE admins
 			ADD PRIMARY KEY (id);
 		SQL
-		add_column :io_questions, :inputs, :text
-		add_column :io_questions, :outputs, :text
+		# add_column :admins, :inputs, :text
+		# add_column :admins, :outputs, :text
 	end
 
 	def down

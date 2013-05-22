@@ -12,22 +12,22 @@ module Role
 	def self.included(base)
 		@classes << base
 		base.extend ClassMethods
-		base.define_role_properties_accessors
+		# base.define_role_properties_accessors
 	end
 
 	def self.find(id)
 		load_classes
 		@classes.each do |t|
-			question = t.find_by_id(id)
-			if question != nil
-				return question
+			role = t.find_by_id(id)
+			if role != nil
+				return role
 			end
 		end
 	end
 
 	module ClassMethods
 		def define_role_properties_accessors
-			all_attributes = QuestionProperties.content_columns.map(&:name)
+			all_attributes = RoleProperties.content_columns.map(&:name)
 			ignored_attributes = ["created_at", "updated_at", "question_type"]
 			attributes_to_delegate = all_attributes - ignored_attributes
 			attributes_to_delegate.each do |attrib|				
@@ -38,4 +38,3 @@ module Role
 			end
 		end
 	end
-end #might have to remove this....

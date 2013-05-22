@@ -1,4 +1,6 @@
 class LaunchController < ApplicationController
+	skip_before_filter :authenticate
+	
 	def index
 		@user_info  = UserInfo.new
 		redirect_to :action => 'mypage' if UserInfo.find_by_id(session[:user_info_id])
