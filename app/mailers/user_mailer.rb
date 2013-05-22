@@ -5,7 +5,6 @@ class UserMailer < ActionMailer::Base
 		@ref = user.launch_info.ref
 		@message = message
 		@user = user
-
 		mail(:to => recipient, :subject => subject)
 	end
 

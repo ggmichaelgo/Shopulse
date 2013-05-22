@@ -34,11 +34,6 @@ function hide_email_pane()
 	});	
 }
 
-function email_error()
-{
-	
-}
-
 $(document).ready(function(){
 	
 	$('#email_form').bind("ajax:success", function(xhr, data, status) {

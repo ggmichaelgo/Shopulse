@@ -1,8 +1,9 @@
 class UserInfo < ActiveRecord::Base
 	attr_accessible :email
 	has_one :launch_info
+	has_one :role
 
-	def create_launch_info
+	def build_launch_info
 		self.launch_info = LaunchInfo.create
 		self.launch_info.subscriber = []
 		self.launch_info.ref_clicks = 0

@@ -3,14 +3,12 @@ Shopulse::Application.routes.draw do
 
 	root :to => 'launch#index'
 
-	devise_for :users, :controllers => {:registrations => 'registrations'}  do
-		get "register", :to => "registrations#select"
-		root :to => 'registrations#select'
+	devise_for :users, :controllers => {:sessions => 'sessions', :registrations => 'registrations'} do
+		get "register", :to => "registrations#select_role"
+		root :to => 'registrations#select_role'
 	end
 	match 'invite/:id' => 'launch#invite'
 	match 'launch/mypage' => 'launch#send_email', :via => :post
-
-	match 'register' => 'registrations#select'
 
 	# match 'register' => 'launch#index'
 	match ':controller(/:action(/:id))(.:format)'	

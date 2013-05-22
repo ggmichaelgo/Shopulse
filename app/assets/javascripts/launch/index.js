@@ -10,7 +10,7 @@ function bg_roll()
 
 
 $(document).ready(function(){
-	setInterval(bg_roll, 8000);
+	//setInterval(bg_roll, 8000);
 
 	$('#return').bind('mouseenter', function() {
 		$("#return_message").fadeIn();

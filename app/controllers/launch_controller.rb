@@ -16,7 +16,7 @@ class LaunchController < ApplicationController
 		
 		if foo == nil
 			foo = UserInfo.create(params[:user_info])
-			foo.create_launch_info
+			foo.build_launch_info
 			foo.launch_info.ref = generate_reference
 			foo.launch_info.save
 			
@@ -64,9 +64,10 @@ class LaunchController < ApplicationController
 		list = get_recipients params[:email][:recipients]
 		subject = params[:email][:subject]
 		message = params[:email][:message]
+		padding = " " #send different email
 		list.each do |x|
-			puts x
-			UserMailer.launch_invitation_email(from, x, subject, message).deliver
+			UserMailer.launch_invitation_email(from, x, subject, message + padding).deliver!
+			padding += " "
 		end
 		render :json => 1
 	end
