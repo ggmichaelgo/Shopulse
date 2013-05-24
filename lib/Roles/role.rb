@@ -17,12 +17,12 @@ module Role
 
 	def self.find(id)
 		load_classes
+		role = nil
 		@classes.each do |t|
 			role = t.find_by_id(id)
-			if role != nil
-				return role
-			end
+			break if role != nil
 		end
+		return role
 	end
 
 	module ClassMethods

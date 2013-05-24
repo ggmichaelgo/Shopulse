@@ -1,7 +1,14 @@
 class Products < ActiveRecord::Migration
-  def up
-  end
+	def change
+		create_table :products do |t|
+			t.integer :retailer_id
+			#attr_accessible :price, :description, :size, :name
+			t.float :price
+			t.text :description
+			t.string :size
+			t.string :name
 
-  def down
-  end
+			t.timestamps
+		end
+	end
 end

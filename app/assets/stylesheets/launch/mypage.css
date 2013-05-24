@@ -125,3 +125,15 @@ body
 {
 	width: 150px;
 }
+
+/*Facebook*/
+.fb_iframe_widget.fb_edge_comment_widget iframe
+{
+	position: relative;
+	top: -200px;
+}
+/*Facebook*/
+.nub
+{
+	visibility: hidden;
+}

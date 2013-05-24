@@ -1,7 +1,6 @@
 class UserInfo < ActiveRecord::Base
-	attr_accessible :email
+	attr_accessible :email, :role_id
 	has_one :launch_info
-	has_one :role
 
 	def build_launch_info
 		self.launch_info = LaunchInfo.create
@@ -10,4 +9,12 @@ class UserInfo < ActiveRecord::Base
 		self.launch_info.save
 		self.save
 	end
+
+	def role
+		Role.find(role_id)
+	end
+
+	def role= role
+		self.role_id = role.id
+	end	
 end

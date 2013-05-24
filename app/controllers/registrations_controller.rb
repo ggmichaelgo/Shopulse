@@ -14,12 +14,15 @@ class RegistrationsController < Devise::RegistrationsController
 
 	def create
 		super
-		current_user.build_user_info
-		if params[:id] == "retailer"
-			current_user.user_info.role = Retailer.create
-		else
-			current_user.user_info.role = Member.create
+		if current_user != nil
+			current_user.build_user_info
+			if params[:id] == "retailer"
+				puts '!'
+				current_user.user_info.role = Retailer.create
+			else
+				current_user.user_info.role = Member.create
+			end
+			current_user.save
 		end
-		current_user.save
 	end
 end
