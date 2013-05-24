@@ -1,8 +1,8 @@
 Shopulse::Application.routes.draw do
 	resources :roles
 
-	root :to => 'launch#index'
-	# root :to => 'retailers#index'
+	# root :to => 'launch#index'
+	root :to => 'retailers#index'
 
 	devise_for :users, :controllers => {:sessions => 'sessions', :registrations => 'registrations'} do
 		get "register", :to => "registrations#select_role"

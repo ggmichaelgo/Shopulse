@@ -18,3 +18,5 @@ gem "cancan"
 
 #gem 'gibbon' #Mail Chimp
 gem 'mailchimp'
+
+gem 'bootstrap-sass'
