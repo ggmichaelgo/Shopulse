@@ -150,14 +150,14 @@ h2
 {
 	display: inline-block;
 	width: 115px;
-	height: 35px;
+	height: 34px;
 	background-image: url('https://s3.amazonaws.com/Shopulse/Launch+Page/Launch-Page-Button.png');
 	background-color: transparent;
 	padding: 0px 10px;
 	float: right;
 	border: none;
 	cursor: pointer;
-	margin-top: 4px;
+	margin-top: 5.6px;
 }
 
 .privacy_policy
