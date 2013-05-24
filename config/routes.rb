@@ -12,5 +12,5 @@ Shopulse::Application.routes.draw do
 	match 'launch/mypage' => 'launch#send_email', :via => :post
 
 	# match 'register' => 'launch#index'
-	match ':controller(/:action(/:id))(.:format)'	
+	match ':controller(/:action(/:id))(.:format)'
 end

@@ -1,0 +1,12 @@
+<%
+	@retailer = @retailer
+%>
+
+<% form_for @retailer do |f| -%>
+	<!-- attr_accessible :first_name, :last_name, :address, :city, :province, :country, :postal_code -->
+	<%= f.label :first_name, "First Name" %>
+	<%= f.text_field :first_name %>
+	
+
+
+<% end %>
