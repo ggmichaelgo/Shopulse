@@ -30,8 +30,6 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.2.2.0)
-      sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
     coffee-rails (3.2.2)
@@ -70,8 +68,8 @@ GEM
     mime-types (1.23)
     multi_json (1.7.3)
     multi_xml (0.5.3)
-    mysql2 (0.3.11)
     orm_adapter (0.4.0)
+    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -113,6 +111,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.6)
+      actionpack (>= 3.1)
+      execjs
+      railties (>= 3.1)
     tzinfo (0.3.37)
     uglifier (2.1.0)
       execjs (>= 0.3.0)
@@ -124,14 +126,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
   cancan
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
   jquery-ui-rails
   mailchimp
-  mysql2
+  pg
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

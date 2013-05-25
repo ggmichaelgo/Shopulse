@@ -1,27 +1,33 @@
 
-<%= form_for @info, :url => {:action => 'update_profile'} do |f| %>
+<%= form_for @info, :url => {:action => 'update_profile'}, :method => 'POST' do |f| %>
 	<!-- attr_accessible :first_name, :last_name, :address, :city, :province, :country, :postal_code -->
+	<%= f.label :name, "Name" %>
+	<%= f.text_field :name, :value => (@info.name if @info.name != nil) %>
+	<br>
 	<%= f.label :first_name, "First Name" %>
-	<%= f.text_field :first_name %>
+	<%= f.text_field :first_name, :value => (@info.first_name if @info.first_name != nil) %>
 	<br>
 	<%= f.label :last_name, "Last Name" %>
-	<%= f.text_field :last_name %>
+	<%= f.text_field :last_name, :value => (@info.last_name if @info.last_name != nil) %>
 	<br>
 	<%= f.label :address, "Address" %>
-	<%= f.text_field :address %>
+	<%= f.text_field :address, :value => (@info.address if @info.address != nil) %>
 	<br>
 	<%= f.label :city, "City" %>
-	<%= f.text_field :city %>
+	<%= f.text_field :city, :value => (@info.city if @info.city != nil) %>
 	<br>
 	<%= f.label :province, "Province" %>
-	<%= f.text_field :province %>
+	<%= f.text_field :province, :value => (@info.province if @info.province != nil) %>
 	<br>
-	<%= f.label :country, "country" %>
-	<%= f.text_field :country %>
+	<%= f.label :country, "Country" %>
+	<%= f.text_field :country, :value => (@info.country if @info.country != nil) %>
 	<br>
 	<%= f.label :postal_code, "Postal Code" %>
-	<%= f.text_field :postal_code %>
+	<%= f.text_field :postal_code, :value => (@info.postal_code if @info.postal_code != nil) %>
 	<br>
 	
 	<%= f.submit "Submit", :class => 'btn' %>
 <% end %>
+<br>
+
+<%= link_to "Home", :action => "index" %>
