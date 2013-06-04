@@ -16,11 +16,11 @@ $(document).ready(function(){
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-	fjs.parentNode.insertBefore(js, fjs);
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <table width='100%' height='100%'><tr style='text-align: center'><td>
@@ -68,7 +68,7 @@ $(document).ready(function(){
 				</tr>
 				<tr>
 					<td>
-						<div style='padding: 0 -1px 0 15px;'class="fb-send" data-href="http://shopulse.com/invite/<%= @launch_info.ref %>" data-font="arial"></div>
+						<div style='padding: 0 -1px 0 15px;'class="fb-send" data-href="http://www.shopulse.com/invite/<%= @launch_info.ref %>" data-font="arial"></div>
 						<a href="https://twitter.com/share" class="twitter-share-button" data-text="Shopulse is launching soon and I'll be one of the first to get access. Join me!" data-url="http://shopulse.com/invite/<%= @launch_info.ref %>" data-via="itsshopulse" data-count="none">Tweet</a>
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 					</td>
@@ -78,7 +78,7 @@ $(document).ready(function(){
 						<%= f.email_field :recipients, :placeholder => 'enter emails (comma seperated)', 
 						:onclick => 'show_email_pane();', 
 						:multiple => "multiple",
-						:required => true%>
+						:required => true %>
 						<div id='email_pane'>
 							<%= f.text_field :subject, :placeholder => 'email subject', :required => true %>
 							<%= f.text_area :message, :placeholder => 'email message', :required => true %>
