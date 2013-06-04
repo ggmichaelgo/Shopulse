@@ -2,7 +2,7 @@
 
 
 
-<%= form_for resource, :as => resource_name, :url => {:controller => 'registrations', :action => 'create', :id => params[:id]}, :action => 'create' do |f| %>
+<%= form_for resource, :as => resource_name, :url => {:controller => 'registrations', :action => 'create', :id => params[:id]} do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
